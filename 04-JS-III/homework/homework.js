@@ -174,11 +174,11 @@ function todosIguales(arreglo) {
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
   for(i = 1; i < arreglo.length; i++){
-    if(arreglo[i] === arreglo[i - 1]){
-      return true;
+    if(arreglo[i] !== arreglo[i - 1]){
+      return false;
     }
   }
-  return false;
+  return true;
 } 
 
 
