@@ -19,6 +19,15 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  var obj = {}
+  for(i = 0; i < string.length; i++){
+    if(!obj.hasOwnProperty(string[i])){
+      obj[string[i]] = 1;
+    } else {
+      obj[string[i]]++;
+    }
+  }
+  return obj;
 }
 
 
@@ -27,7 +36,21 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  var mayus = '';
+  var minus = '';
+  for(i = 0;i < s.length; i++){
+    if(s[i] === s.toUpperCase()[i]){
+      mayus = mayus + s[i];
+    }
+  }
+    for(i = 0;i < s.length; i++){
+    if(s[i] === s.toLowerCase()[i]){
+      minus = minus + s[i];
+    }
+  }
+  return mayus + minus;
 }
+
 
 
 function asAmirror(str) {
@@ -36,6 +59,12 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+    var invert = '';
+    for(i = 1; i <= str.length; i++){
+      invert = invert + str[str.length -i];
+    }
+  var muestra = invert.split(' ');
+  return muestra.reverse().join(' ');
 } 
 
 
@@ -44,6 +73,12 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  var muestra = numero.toString().split('').reverse().join('');
+  if(muestra == numero){
+    return "Es capicua";
+  } else {
+    return "No es capicua";
+  }
 }
 
 
@@ -51,6 +86,14 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  cadenaMod = ''
+  for(i = 0; i < cadena.length; i++){
+    if(!(cadena[i] == 'a' || cadena[i] == 'b'
+       || cadena[i] == 'c')){ 
+      cadenaMod = cadenaMod + cadena[i]
+    }
+  }
+  return cadenaMod
 }
 
 
