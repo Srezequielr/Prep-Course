@@ -101,6 +101,7 @@ function sortArray(arr) {
   //La función recibe una matriz de strings. Ordena la matriz en orden creciente de longitudes de cadena
   //Ej: Recibe ---> ["You", "are", "beautiful", "looking"] || Devuelve ---> [“You", "are", "looking", "beautiful"]
   //Escribe tu código aquí
+  return arr.sort(function(a, b){return a.length - b.length})
 }
 
 
@@ -109,7 +110,16 @@ function buscoInterseccion(arreglo1, arreglo2){
   //retornar un nuevo array con la intersección de ambos elementos. (Ej: [4,2,3] unión [1,3,4] = [3,4].
   //Si no tienen elementos en común, retornar un arreglo vacío.
   //Aclaración: los arreglos no necesariamente tienen la misma longitud
-  //Escribe tu código aquí  
+  //Escribe tu código aquí
+  var muestra = [];
+  arreglo1 = arreglo1.sort();
+  arreglo2 = arreglo2.sort();
+  for(i = 0; i < arreglo1.length; i++){
+    if(arreglo1.indexOf(arreglo2[i]) !== -1){
+      muestra.push(arreglo2[i])
+    }
+  }
+  return muestra;
 }
 
 
